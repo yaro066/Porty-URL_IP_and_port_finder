@@ -7,7 +7,7 @@ def get_ip_addresses(url):
     domain = urlparse(url).netloc
 
     try:
-        # Use socket to get the IP addresses associated with the domain
+        # Use socket to get the IP addresses that the domain uses
         ip_addresses = socket.gethostbyname_ex(domain)
         return ip_addresses[2]
     except socket.gaierror:
@@ -41,7 +41,7 @@ def main():
     for ip_address in ip_addresses:
         print(ip_address)
 
-    # Define a list of common ports to scan
+    # Define a list of ports to scan
     popular_ports = [21, 22, 23, 25, 53, 80, 110, 119, 123, 143,
                      161, 194, 443, 465, 587, 993, 995, 1433, 1521,
                      3306, 3389, 5432, 5900, 6379, 8080, 8443, 27017,
